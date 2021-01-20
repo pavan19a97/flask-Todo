@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block head %}
+
+    <title>Todo-List</title>
+
+{% endblock %}
+
+{% block body %}
+    <h2>body body</h2>
+    <form action="/add" method="post">
+        <label>todo Task</label>
+        <input type="text" name="task"/>
+        <button type="submit" >Add</button>
+    </form>
+ 
+
+    {% for task in tasks %}
+        <div>
+            <input type="text" >{{ task.task }}</input>
+            <a href="/update/{{ task.id }}"> Update</a>
+            <a href="/delete/{{ task.id }}">Delete</a>
+        </div>
+
+    {% endfor%}
+{% endblock %}
+
